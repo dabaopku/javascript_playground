@@ -1,0 +1,26 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div id='app'>
+      <div>
+        <div>Todo List</div>
+        <input type='input' id='new-todo' />
+      </div>
+      <ul></ul>
+      <div></div>
+    </div>
+    <script src='javascripts/jquery.js'></script>
+    <script src='javascripts/underscore.js'></script>
+    <script src='javascripts/backbone.js'></script>
+    <script src='javascripts/backbone.localStorage.js'></script>
+    <script src='javascripts/todo.js'></script>
+    
+    <script type='text/template' id='todo-template'>
+      <div>
+        <input type='checkbox' <%= done ? 'checked="checked"' : '' %> />
+        <label><%- text %></label>
+      </div>
+    </script>
+  </body>
+</html>
