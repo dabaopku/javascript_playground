@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "d3:js": "cd public/javascripts/d3 && coffee --watch --compile --output . *.coffee",
+    "d3": "npm run d3:js & npm start"
   },
   "dependencies": {
     "backbone": "^1.2.0",
