@@ -27,6 +27,17 @@
       #graph circle.node {
         stroke-width: 1.0px;
       }
+      #scatter .axis line {
+        stroke: #ddd;
+      }
+      #scatter .axis path {
+        display: none;
+      }
+      #scatter .cell .extent {
+        fill: black;
+        fill-opacity: 0.125;
+        stroke: none;
+      }
     </style>
   </head>
   <body>
@@ -35,7 +46,6 @@
     <script src='javascripts/backbone.js'></script>
     <script src='javascripts/backbone.localStorage.js'></script>
     <script src='javascripts/d3.js'></script>
-    <script src='javascripts/d3/test.js'></script>
-    <script src='javascripts/d3/graph.js'></script>
+    <script src='javascripts/d3/scatterplot.js'></script>
   </body>
 </html>

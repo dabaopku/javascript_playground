@@ -12,6 +12,6 @@
 
 * [D3 Tutorials](http://alignedleft.com/tutorials/d3/)
 * [How to Make an Interactive Network Visualization](http://flowingdata.com/2012/08/02/how-to-make-an-interactive-network-visualization/)
-
+* [Chord Diagram](http://bl.ocks.org/mbostock/4062006)
 
 
