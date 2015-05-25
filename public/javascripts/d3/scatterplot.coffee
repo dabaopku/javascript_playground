@@ -119,13 +119,32 @@ $ ->
                 
         
         # Brush
+        currentBrushCell = null
         brush = d3.svg.brush()
             .x x
             .y y
-            .on "brushstart", (d) -> 
-                console.log d
-            .on "brush", (a,b,c) ->
-                console.log a,b,c
-            .on "brushend", (d) ->
-                console.log d
+            .on "brushstart", (p) ->
+                if currentBrushCell isnt this
+                    d3.select currentBrushCell
+                        .call brush.clear()
+                    x.domain domains[p.x]
+                    y.domain domains[p.y]
+                    currentBrushCell = this
+                cells.selectAll "circle"
+                    .style
+                        "fill": "#ccc"
+            .on "brush", (p) ->
+                e = brush.extent()
+                cells.selectAll "circle"
+                    .style
+                        "fill": (d) ->
+                            if e[0][0] <= d[p.x] <= e[1][0] and e[0][1] <= d[p.y] <= e[1][1]
+                                color(d["species"])
+                            else
+                                "#ccc"
+            .on "brushend", ->
+                if brush.empty()
+                    cells.selectAll "circle"
+                        .style
+                            "fill": (d) -> color(d["species"])
         cells.call brush
